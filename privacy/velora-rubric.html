@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Privacy Policy - Velora Rubric</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<div class="crumb"><a href="../index.html">Velora Suite</a> / Velora Rubric</div>
+<h1>Privacy Policy - Velora Rubric</h1>
+<p><strong>Last updated:</strong> September 2026</p>
+<h2>Overview</h2>
+<p>Velora Rubric is a local-first Chrome extension that lets teachers grade student text against their own rubrics in the side panel, with an optional AI-suggested evaluation. It is designed with a privacy-first architecture.</p>
+<h2>Data Collection</h2>
+<p>Velora Rubric does <strong>not</strong> collect, transmit, or store any user data on external servers. There is no analytics, no tracking, and no telemetry transmitted outside of the browser.</p>
+<h2>How Data Is Handled</h2>
+<ul><li><strong>Local storage only.</strong> Rubrics, grade history, the optional API key and preferences are stored exclusively in <code>chrome.storage.local</code> on the user's device.</li><li><strong>Student text stays on the device by default.</strong> Pasted or selected text is only kept in the panel while you work with it. Grade history stores a short non-reversible hash of the text, the rubric name, the scores and the date, not the text itself.</li><li><strong>Page reading on demand.</strong> The active page is read only when the user clicks &quot;Read selection&quot;, and only the currently highlighted text is returned. The extension never modifies pages, never clicks or submits anything on them, and never reads pages in the background.</li><li><strong>User-controlled export.</strong> Grade history can be exported as a CSV file only through an explicit user action. Nothing is uploaded anywhere.</li><li><strong>No user accounts.</strong> The extension does not require or support user accounts, login, or registration of any kind.</li></ul>
+<h2>External API Usage</h2>
+<p>The only external network request made by this extension is to <strong>api.groq.com</strong>, and only when the user explicitly clicks &quot;Evaluate with AI&quot;. This request:</p>
+<ul><li>Uses the user's own Groq API key, which they provide and store locally.</li><li>Sends only the rubric (criteria names, descriptions, points) and the student text the user chose to evaluate.</li><li>Is initiated exclusively by manual user action; there are no background, scheduled, or automatic API calls.</li><li>Returns a suggestion that is always labeled &quot;Suggestion — review before grading&quot;. The teacher decides the final grade.</li></ul>
+<p>The extension developer has no access to the user's API key, rubrics or student text. Usage of the Groq API is governed by Groq's own terms of service and privacy policy. All non-AI features work without a key and without any network access.</p>
+<h2>Page Access</h2>
+<p>Velora Rubric does not inject content scripts. When the user clicks &quot;Read selection&quot;, a small read-only function runs once in the active tab and returns the selected text and the page title. It does not change the page.</p>
+<h2>Permissions Explained</h2>
+<ul><li><strong>sidePanel</strong> - renders the rubric editor and grading sheet in Chrome's side panel.</li><li><strong>storage</strong> - saves rubrics, grade history and the optional API key locally.</li><li><strong>activeTab</strong> - grants temporary access to the current tab only after the user clicks &quot;Read selection&quot;.</li><li><strong>scripting</strong> - runs the one-off, read-only selection reader in the active tab on click.</li><li><strong>host permission for api.groq.com</strong> - allows the optional, user-initiated AI evaluation request.</li></ul>
+<h2>Data Deletion</h2>
+<p>All data can be removed at any time by deleting rubrics or history entries inside the panel, clicking &quot;Clear history&quot;, clicking &quot;Forget key&quot;, or uninstalling the extension. Uninstalling removes all locally stored data.</p>
+<h2>Changes to This Policy</h2>
+<p>Any future changes to this policy will be published with an updated extension version and a new &quot;Last updated&quot; date.</p>
+<h2>Velora Keys</h2>
+<p>If you also use Velora Keys and have approved this extension there, this extension can ask Velora Keys for your AI API key when it has none of its own saved. The request travels over Chrome's local messaging between your own installed extensions; nothing is sent to a server. The key is used for this extension's requests to the AI provider, exactly as if you had pasted it here, and this extension does not store it. You can revoke the approval in Velora Keys at any time.</p>
+<h2>Contact</h2>
+<p>Questions about this policy or about your data: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></p>
+<footer>Velora Suite - local-first browser tools. Contact: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></footer>
+</main>
+</body>
+</html>

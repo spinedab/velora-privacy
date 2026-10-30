@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Privacy Policy - Velora Mail</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<div class="crumb"><a href="../index.html">Velora Suite</a> / Velora Mail</div>
+<h1>Privacy Policy - Velora Mail</h1>
+<p><strong>Last updated:</strong> April 2026</p>
+<h2>Overview</h2>
+<p>Velora Mail is a local-only Chrome extension that helps Gmail users draft replies and new emails with AI assistance. It is a <strong>draft-only</strong> tool: the user copies the generated draft from the side panel and pastes it into Gmail themselves. It is designed with a privacy-first architecture.</p>
+<h2>Critical Privacy Statement</h2>
+<p><strong>This extension never sends email. It never auto-replies. It never reads your inbox, thread list, or any message you have not explicitly pasted or selected. It never submits any Gmail compose form or clicks the Send button.</strong></p>
+<p>The user is always the one who decides what text is written, copies the draft to the clipboard, and sends the email through Gmail as they normally would.</p>
+<h2>Data Collection</h2>
+<p>Velora Mail does <strong>not</strong> collect, transmit, or store any user data on external servers. There is no analytics, no tracking, and no telemetry transmitted outside of the browser.</p>
+<h2>How Data Is Handled</h2>
+<ul><li><strong>Local storage only.</strong> User preferences, API keys, saved tone presets, signature templates, and draft snippets are stored exclusively in <code>chrome.storage.local</code> on the user's device.</li><li><strong>No Gmail account access.</strong> The extension does not authenticate to Google. It does not use the Gmail API. It does not access OAuth tokens.</li><li><strong>No inbox reading.</strong> The extension never scans the inbox, label list, message list, or any thread the user has not explicitly selected or pasted.</li><li><strong>No sending.</strong> The extension has no code path that triggers a Gmail send action.</li><li><strong>Clipboard copy is manual.</strong> The user clicks a Copy button to move a draft to their own clipboard. The extension never writes into Gmail's compose field automatically.</li><li><strong>No user accounts.</strong> The extension does not require or support user accounts, login, or registration of any kind.</li></ul>
+<h2>External API Usage</h2>
+<p>The only external network request made by this extension is to <strong>api.groq.com</strong>, and only when the user explicitly asks the extension to draft, rewrite, or adjust the tone of a message. This request:</p>
+<ul><li>Uses the user's own Groq API key, which they provide and store locally.</li><li>Sends only the text the user has typed or pasted into the side panel, plus the chosen tone/length options.</li><li>Is initiated exclusively by manual user action; there are no background, scheduled, or automatic API calls.</li></ul>
+<p>The extension developer has no access to the user's API key or drafts. Usage of the Groq API is governed by Groq's own terms of service and privacy policy.</p>
+<h2>Gmail Page Access</h2>
+<p>Host permission on <code>mail.google.com</code> exists so that the side panel can be associated with Gmail tabs. The extension does not parse the inbox, extract message lists, or interact with the Gmail UI beyond a read of what the user has manually selected and passed to the side panel. It never types into, submits, or sends from a Gmail compose window.</p>
+<h2>Permissions Justification</h2>
+<table><thead><tr><th>Permission</th><th>Purpose</th></tr></thead><tbody><tr><td><code>sidePanel</code></td><td>Opens the drafting workspace as a Chrome side panel beside Gmail</td></tr><tr><td><code>storage</code></td><td>Saves API key, preferences, tone presets, and local draft snippets in <code>chrome.storage.local</code></td></tr><tr><td><code>host_permissions: api.groq.com</code></td><td>Sends draft generation requests using the user's own API key</td></tr><tr><td><code>host_permissions: mail.google.com</code></td><td>Allows the side panel to activate on Gmail tabs. The extension never submits, sends, or auto-fills anything on Gmail.</td></tr></tbody></table>
+<h2>Changes to This Policy</h2>
+<p>If this policy is updated, the new version will be published alongside the extension update on the Chrome Web Store.</p>
+<h2>Velora Keys</h2>
+<p>If you also use Velora Keys and have approved this extension there, this extension can ask Velora Keys for your AI API key when it has none of its own saved. The request travels over Chrome's local messaging between your own installed extensions; nothing is sent to a server. The key is used for this extension's requests to the AI provider, exactly as if you had pasted it here, and this extension does not store it. You can revoke the approval in Velora Keys at any time.</p>
+<h2>Contact</h2>
+<p>Questions about this policy or about your data: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></p>
+<footer>Velora Suite - local-first browser tools. Contact: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></footer>
+</main>
+</body>
+</html>

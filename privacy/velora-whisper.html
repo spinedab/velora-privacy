@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Privacy Policy - Velora Whisper</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<div class="crumb"><a href="../index.html">Velora Suite</a> / Velora Whisper</div>
+<h1>Privacy Policy - Velora Whisper</h1>
+<p><strong>Last updated:</strong> September 2026</p>
+<h2>Overview</h2>
+<p>Velora Whisper is a Chrome extension that transcribes audio files from your computer using your own Groq API key, and keeps the resulting transcript on your device. It is local-first about the transcript, with one clear exception described below about the audio.</p>
+<h2>Important: your audio is uploaded</h2>
+<p>To transcribe a file, <strong>the audio is uploaded to api.groq.com</strong> using your own API key. This happens only when you press Transcribe, and only for the file you selected. There is no way to transcribe with this quality without sending the audio somewhere, so the extension says it plainly rather than implying otherwise:</p>
+<ul><li>The upload goes directly from your browser to Groq. Velora has no server and never receives your audio.</li><li>What Groq does with audio submitted to its API is governed by Groq's own terms and privacy policy, not this one.</li><li>Nothing is uploaded until you press Transcribe. Loading a file, playing it in the panel and checking its size all happen locally.</li></ul>
+<p><strong>Do not use this for recordings you are not allowed to send to a third party.</strong> If a conversation is confidential, privileged, or covered by an agreement or regulation, use a transcription tool that runs entirely on your machine instead.</p>
+<p>Also: recording other people may require their consent depending on where you live. This extension only transcribes files you already have; obtaining them lawfully is your responsibility.</p>
+<h2>Data Collection</h2>
+<p>Velora Whisper does <strong>not</strong> collect, transmit, or store any user data on servers operated by the developer. There is no analytics, no tracking, and no telemetry. The only outbound request is the one you trigger, straight to Groq.</p>
+<h2>How Data Is Handled</h2>
+<ul><li><strong>The audio file is never stored.</strong> It is held in memory while the panel is open, referenced by a temporary object URL for the player, and released when you load another file or close the panel. It is never written to <code>chrome.storage</code>, never cached, and never included in a history entry.</li><li><strong>Local storage only.</strong> Transcripts you save to history (name, date, duration, word count, text and timestamped segments), your preferences, and the optional API key are stored exclusively in <code>chrome.storage.local</code> on the user's device.</li><li><strong>No page access whatsoever.</strong> The extension has no <code>activeTab</code>, no <code>scripting</code>, no <code>tabs</code> permission and no content scripts. It cannot read any web page. Files come from your disk via drag-and-drop or the file picker.</li><li><strong>Size is checked locally.</strong> The 25 MB per-request limit is enforced in the panel before any upload starts, so an oversized file never leaves your machine.</li><li><strong>Clipboard on demand.</strong> The clipboard is written only when you click Copy. The clipboard is never read.</li><li><strong>User-controlled downloads.</strong> <code>.txt</code>, <code>.srt</code>, <code>.vtt</code> and <code>.md</code> files are saved only when you click them.</li><li><strong>No user accounts.</strong> The extension does not require or support user accounts, login, or registration of any kind.</li></ul>
+<h2>External API Usage</h2>
+<p>Two endpoints on <strong>api.groq.com</strong>, both user-initiated and both using your own key:</p>
+<ol><li><code>POST /openai/v1/audio/transcriptions</code> — sends the audio file, the chosen model, the optional language hint and <code>response<em>format=verbose</em>json</code>. Triggered by Transcribe.</li><li><code>POST /openai/v1/chat/completions</code> — sends the transcript text to produce a summary and action items. Triggered by &quot;Summary and action items&quot;, and only if you click it.</li></ol>
+<h2>Permissions Explained</h2>
+<ul><li><strong>sidePanel</strong> - renders the workspace in Chrome's side panel.</li><li><strong>storage</strong> - saves your transcripts, preferences and the optional API key locally.</li><li><strong>downloads</strong> - saves the <code>.txt</code>, <code>.srt</code>, <code>.vtt</code> or <code>.md</code> file when you click Download.</li><li><strong>clipboardWrite</strong> - copies the transcript when you click Copy.</li><li><strong>host permission for api.groq.com</strong> - allows the transcription and summary requests.</li></ul>
+<h2>Data Deletion</h2>
+<p>History entries can be deleted individually; &quot;Forget key&quot; removes the API key; the loaded audio is released when you close the panel. Uninstalling the extension removes all locally stored data.</p>
+<h2>Changes to This Policy</h2>
+<p>Any future changes to this policy will be published with an updated extension version and a new &quot;Last updated&quot; date.</p>
+<h2>Velora Keys</h2>
+<p>If you also use Velora Keys and have approved this extension there, this extension can ask Velora Keys for your AI API key when it has none of its own saved. The request travels over Chrome's local messaging between your own installed extensions; nothing is sent to a server. The key is used for this extension's requests to the AI provider, exactly as if you had pasted it here, and this extension does not store it. You can revoke the approval in Velora Keys at any time.</p>
+<h2>Contact</h2>
+<p>Questions about this policy or about your data: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></p>
+<footer>Velora Suite - local-first browser tools. Contact: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></footer>
+</main>
+</body>
+</html>

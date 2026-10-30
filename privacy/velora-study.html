@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Privacy Policy - Velora Study</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<div class="crumb"><a href="../index.html">Velora Suite</a> / Velora Study</div>
+<h1>Privacy Policy - Velora Study</h1>
+<p><strong>Last updated:</strong> September 2026</p>
+<h2>Overview</h2>
+<p>Velora Study is a local-only Chrome extension for spaced-repetition flashcard learning using the SM-2 algorithm, plus a syllabus-to-plan extractor, a pomodoro timer, a reading-time calculator and iCal export. All decks, cards, plan tasks, sessions and review data live on the user's device. AI-assisted card generation is optional and uses the user's own API key. It is designed with a privacy-first architecture.</p>
+<h2>Data Collection</h2>
+<p>Velora Study does <strong>not</strong> collect, transmit, or store any user data on external servers. There is no analytics, no tracking, and no telemetry transmitted outside of the browser.</p>
+<h2>How Data Is Handled</h2>
+<ul><li><strong>Local storage only.</strong> All decks, cards, review history, SM-2 intervals, plan tasks, pomodoro sessions, reading speed, API keys, and preferences are stored exclusively in <code>chrome.storage.local</code> on the user's device.</li><li><strong>Local scheduling.</strong> The SM-2 algorithm runs entirely in the browser. Review intervals, easiness factors, and due dates are computed and stored locally.</li><li><strong>No user accounts.</strong> The extension does not require or support user accounts, login, or registration of any kind. There is no cloud sync.</li></ul>
+<h2>External API Usage</h2>
+<p>The only external network request made by this extension is to <strong>api.groq.com</strong>, and only when the user explicitly clicks &quot;Generate with AI&quot; (flashcards) or &quot;Extract tasks with AI&quot; (syllabus). This request:</p>
+<ul><li>Uses the user's own Groq API key, which they provide and store locally.</li><li>Sends only the text visible in the panel textarea at that moment (pasted notes, a selection or a page the user chose to read) and the chosen settings.</li><li>Is initiated exclusively by manual user action; there are no background, scheduled, or automatic API calls.</li></ul>
+<p>The extension developer has no access to the user's API key, decks, cards, or review data. Usage of the Groq API is governed by Groq's own terms of service and privacy policy.</p>
+<h2>Page Access</h2>
+<p>Velora Study requests <code>activeTab</code> and <code>scripting</code> so that, <strong>only when the user clicks</strong> &quot;Read active tab&quot;, &quot;Use selected text from active tab&quot; or &quot;Measure active tab&quot;, it can run a read-only function in the current tab that returns the page's readable text or the current selection and a word count. The extension has no host permissions for web pages, no content scripts, and never runs in the background on pages. It never clicks, types, submits forms, or modifies any page. Text that is read appears in the panel for the user to review and is not sent anywhere unless the user then clicks an AI button.</p>
+<h2>Downloads</h2>
+<p>The <code>downloads</code> permission is used only when the user clicks &quot;Export .ics&quot;, to save a calendar file generated locally from the user's own plan tasks and pomodoro sessions. A Save-as dialog is shown. No file is downloaded from the internet.</p>
+<h2>Permissions Justification</h2>
+<table><thead><tr><th>Permission</th><th>Purpose</th></tr></thead><tbody><tr><td><code>sidePanel</code></td><td>Opens the study UI (decks, review session, editor) as a Chrome side panel</td></tr><tr><td><code>storage</code></td><td>Saves decks, cards, review history, SM-2 scheduling data, API key, and preferences in <code>chrome.storage.local</code></td></tr><tr><td><code>alarms</code></td><td>Schedules the daily due-card check and the pomodoro work/break phases</td></tr><tr><td><code>notifications</code></td><td>Shows a desktop notification when cards are due and when a pomodoro phase ends</td></tr><tr><td><code>downloads</code></td><td>Saves the locally generated <code>.ics</code> calendar export when the user clicks Export</td></tr><tr><td><code>activeTab</code></td><td>Grants one-time access to the current tab only after the user clicks a Read/Measure button</td></tr><tr><td><code>scripting</code></td><td>Runs the read-only text/selection reader in the active tab on that click; never modifies pages</td></tr><tr><td><code>host_permissions: api.groq.com</code></td><td>Sends optional AI flashcard or syllabus-extraction requests using the user's own API key</td></tr></tbody></table>
+<h2>Changes to This Policy</h2>
+<p>If this policy is updated, the new version will be published alongside the extension update on the Chrome Web Store.</p>
+<h2>Velora Keys</h2>
+<p>If you also use Velora Keys and have approved this extension there, this extension can ask Velora Keys for your AI API key when it has none of its own saved. The request travels over Chrome's local messaging between your own installed extensions; nothing is sent to a server. The key is used for this extension's requests to the AI provider, exactly as if you had pasted it here, and this extension does not store it. You can revoke the approval in Velora Keys at any time.</p>
+<h2>Contact</h2>
+<p>Questions about this policy or about your data: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></p>
+<footer>Velora Suite - local-first browser tools. Contact: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></footer>
+</main>
+</body>
+</html>

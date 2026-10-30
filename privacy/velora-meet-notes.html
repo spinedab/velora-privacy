@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Privacy Policy - Velora Meet Notes</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<div class="crumb"><a href="../index.html">Velora Suite</a> / Velora Meet Notes</div>
+<h1>Privacy Policy - Velora Meet Notes</h1>
+<p><strong>Last updated:</strong> September 2026</p>
+<h2>Overview</h2>
+<p>Velora Meet Notes is a local-only Chrome extension that provides a side-panel notepad for users taking <strong>manual, typed notes</strong> during Google Meet calls. It is designed with a privacy-first architecture and strict compliance with Google Meet's terms of service.</p>
+<h2>Critical Privacy Statement</h2>
+<p><strong>This extension does NOT record audio. It does NOT record video. It does NOT perform or request transcription of any kind. It does NOT capture participant names, participant lists, chat contents, or any meeting media.</strong></p>
+<p>The only content stored or processed is text that the user personally types into the extension's notepad. Nothing else from the meeting is accessed, read, intercepted, or captured.</p>
+<h2>Data Collection</h2>
+<p>Velora Meet Notes does <strong>not</strong> collect, transmit, or store any user data on external servers. There is no analytics, no tracking, and no telemetry transmitted outside of the browser.</p>
+<h2>How Data Is Handled</h2>
+<ul><li><strong>Local storage only.</strong> User-typed notes, meeting labels, API keys, and preferences are stored exclusively in <code>chrome.storage.local</code> on the user's device.</li><li><strong>No media capture.</strong> The extension has no access to microphone, camera, tab audio, or tab video. The Chrome manifest does not request any such permissions.</li><li><strong>No automatic content reading.</strong> The extension does not read participant names, the attendee list, chat messages, shared presentations, or any other Meet UI element.</li><li><strong>User exports.</strong> The user may explicitly export their own typed notes or extracted minutes as a Markdown or JSON file using the downloads permission. Nothing is downloaded without an explicit user action.</li><li><strong>Clipboard.</strong> &quot;Copy Notion Markdown&quot; and &quot;Copy email&quot; write text to the clipboard only when the user clicks them (<code>clipboardWrite</code>). The extension never reads the clipboard.</li><li><strong>Session buffer.</strong> While you type, the notes textarea is mirrored into <code>chrome.storage.session</code> so an accidentally closed panel can restore them. This buffer lives only in browser memory and is discarded when the browser closes.</li><li><strong>No user accounts.</strong> The extension does not require or support user accounts, login, or registration of any kind.</li></ul>
+<h2>External API Usage</h2>
+<p>The only external network request made by this extension is to <strong>api.groq.com</strong>, and only when the user explicitly clicks &quot;Structure notes with AI&quot;, &quot;Extract minutes&quot; or &quot;Draft email&quot; on <strong>their own typed notes</strong>. This request:</p>
+<ul><li>Uses the user's own Groq API key, which they provide and store locally.</li><li>Sends only the text the user typed into the notepad and explicitly chose to process.</li><li>Is initiated exclusively by manual user action; there are no background, scheduled, or automatic API calls.</li></ul>
+<p>The extension developer has no access to the user's API key or note content. Usage of the Groq API is governed by Groq's own terms of service and privacy policy.</p>
+<h2>Google Meet Page Access</h2>
+<p>Host permission on <code>meet.google.com</code> is used <strong>only</strong> so the side panel can be attached to Meet tabs and so the extension can tell the user which meeting URL the current notes are associated with. The extension does not read, extract, or transmit any content from the Meet page itself.</p>
+<h2>Permissions Justification</h2>
+<table><thead><tr><th>Permission</th><th>Purpose</th></tr></thead><tbody><tr><td><code>sidePanel</code></td><td>Opens the note-taking UI as a Chrome side panel beside the Meet window</td></tr><tr><td><code>activeTab</code></td><td>Detects that the current tab is a Google Meet URL so notes can be labeled with that meeting</td></tr><tr><td><code>storage</code></td><td>Saves typed notes, meeting labels, API key, and preferences in <code>chrome.storage.local</code></td></tr><tr><td><code>downloads</code></td><td>Lets the user explicitly export their own typed notes or extracted minutes as a <code>.md</code> or <code>.json</code> file. Used only on user click.</td></tr><tr><td><code>clipboardWrite</code></td><td>Copies the Notion-flavored Markdown minutes or the follow-up email draft to the clipboard when the user clicks Copy. Write-only; the clipboard is never read.</td></tr><tr><td><code>host_permissions: api.groq.com</code></td><td>Sends note cleanup/summary requests (on user-typed text only) using the user's own API key</td></tr><tr><td><code>host_permissions: meet.google.com</code></td><td>Allows the side panel to associate notes with a Meet tab URL. No Meet page content is read or transmitted.</td></tr></tbody></table>
+<h2>Compliance With Google Meet Terms</h2>
+<p>This extension is designed to respect Google Meet's terms of service. Because it performs no recording and no transcription, it cannot be used to capture a meeting without participants' consent. Users remain responsible for informing meeting participants that they are taking written notes, as they would with pen and paper.</p>
+<h2>Changes to This Policy</h2>
+<p>If this policy is updated, the new version will be published alongside the extension update on the Chrome Web Store.</p>
+<h2>Velora Keys</h2>
+<p>If you also use Velora Keys and have approved this extension there, this extension can ask Velora Keys for your AI API key when it has none of its own saved. The request travels over Chrome's local messaging between your own installed extensions; nothing is sent to a server. The key is used for this extension's requests to the AI provider, exactly as if you had pasted it here, and this extension does not store it. You can revoke the approval in Velora Keys at any time.</p>
+<h2>Contact</h2>
+<p>Questions about this policy or about your data: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></p>
+<footer>Velora Suite - local-first browser tools. Contact: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></footer>
+</main>
+</body>
+</html>

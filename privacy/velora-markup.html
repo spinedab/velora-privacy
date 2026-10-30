@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Privacy Policy - Velora MarkUp</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<div class="crumb"><a href="../index.html">Velora Suite</a> / Velora MarkUp</div>
+<h1>Privacy Policy - Velora MarkUp</h1>
+<p><strong>Last updated:</strong> September 2026</p>
+<h2>Overview</h2>
+<p>Velora MarkUp is a local-only Chrome extension that captures a screenshot of the visible tab when the user clicks a button and lets the user annotate it inside the extension's side panel. It is designed with a privacy-first architecture.</p>
+<h2>Data Collection</h2>
+<p>Velora MarkUp does <strong>not</strong> collect, transmit, or store any user data on external servers. There is no analytics, no tracking, no telemetry, and no AI processing of any kind. The extension makes no network requests.</p>
+<h2>How Data Is Handled</h2>
+<ul><li><strong>Capture on demand.</strong> A screenshot is taken only when the user clicks &quot;Capture visible tab&quot;. The extension never captures automatically or in the background.</li><li><strong>Local storage only.</strong> The last 10 captures are kept as compressed previews in <code>chrome.storage.local</code> on the user's device (about 4 MB total). The user can clear them at any time.</li><li><strong>Clipboard on demand.</strong> The clipboard is written only when the user clicks &quot;Copy PNG&quot;. The extension never reads the clipboard.</li><li><strong>Downloads on demand.</strong> Files are saved only when the user clicks &quot;Download&quot;.</li><li><strong>No user accounts.</strong> The extension does not require or support accounts, login, or registration.</li></ul>
+<h2>External API Usage</h2>
+<p>None. The extension does not contact any server.</p>
+<h2>Page Access</h2>
+<p>Velora MarkUp does not inject content scripts and does not read or modify the content of any web page. <code>activeTab</code> is used solely to capture the pixels of the visible tab at the moment the user clicks.</p>
+<h2>Permissions Explained</h2>
+<ul><li><strong>sidePanel</strong> - renders the editor in Chrome's side panel.</li><li><strong>activeTab</strong> - allows capturing the visible tab when the user clicks the extension.</li><li><strong>downloads</strong> - saves the annotated image as PNG or JPEG when the user clicks Download.</li><li><strong>clipboardWrite</strong> - copies the annotated image when the user clicks Copy.</li><li><strong>storage</strong> - keeps the recent-captures gallery locally.</li></ul>
+<h2>Data Deletion</h2>
+<p>All data can be removed by clicking &quot;Clear&quot; in the panel or by uninstalling the extension. Uninstalling removes all locally stored data.</p>
+<h2>Changes to This Policy</h2>
+<p>Any future changes to this policy will be published with an updated extension version and a new &quot;Last updated&quot; date.</p>
+<h2>Contact</h2>
+<p>Questions about this policy or about your data: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></p>
+<footer>Velora Suite - local-first browser tools. Contact: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></footer>
+</main>
+</body>
+</html>

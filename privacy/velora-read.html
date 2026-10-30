@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Privacy Policy - Velora Read</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<div class="crumb"><a href="../index.html">Velora Suite</a> / Velora Read</div>
+<h1>Privacy Policy - Velora Read</h1>
+<p><strong>Last updated:</strong> September 2026</p>
+<h2>Overview</h2>
+<p>Velora Read is a local-only Chrome extension that provides a personal reading list in the side panel: save the page you are on, then read it offline, listen to it, apply Bionic Reading to the page, tag it, or summarize it on demand. It is designed with a privacy-first architecture.</p>
+<h2>Data Collection</h2>
+<p>Velora Read does <strong>not</strong> collect, transmit, or store any user data on external servers. There is no analytics, no tracking, and no telemetry transmitted outside of the browser.</p>
+<h2>How Data Is Handled</h2>
+<ul><li><strong>Local storage only.</strong> All saved pages (title, URL, captured article text), summaries, tags, reading preferences (voice, speed), and the optional API key are stored exclusively in <code>chrome.storage.local</code> on the user's device.</li><li><strong>Capture on demand.</strong> Page text is captured only when the user clicks &quot;Save current page&quot;, and only from the tab that is active at that moment. Nothing is captured in the background.</li><li><strong>Offline reading.</strong> The &quot;Read offline&quot; view displays the text that was captured at save time from local storage. It does not reload or contact the original website.</li><li><strong>Summaries on demand.</strong> When the user clicks Summarize, the extension first tries Chrome's built-in on-device summarizer (if the browser provides it); in that case the text never leaves the browser and the result is labelled &quot;on-device&quot;. Otherwise the captured text is sent to the AI provider using the user's own key.</li><li><strong>Tags on demand.</strong> Semantic tags are generated only when the user clicks Tag on a specific entry, using the user's own key.</li><li><strong>Read aloud.</strong> Text is spoken with the browser's speech synthesis engine. Voices flagged as &quot;network&quot; in the voice list are provided by the browser vendor and may be processed by that vendor; local voices keep everything on the device. The extension itself sends nothing.</li><li><strong>No user accounts.</strong> The extension does not require or support user accounts, login, or registration of any kind.</li></ul>
+<h2>External API Usage</h2>
+<p>The only external network request made by this extension is to <strong>api.groq.com</strong>, and only when the user explicitly clicks Summarize (and no on-device summarizer is available) or Tag on a saved page. This request:</p>
+<ul><li>Uses the user's own Groq API key, which they provide and store locally.</li><li>Sends only the captured text (or summary) of the specific entry being processed.</li><li>Is initiated exclusively by manual user action; there are no background, scheduled, or automatic API calls.</li></ul>
+<p>The extension developer has no access to the user's API key, saved pages, tags, or summaries. Usage of the Groq API is governed by Groq's own terms of service and privacy policy.</p>
+<h2>Page Access</h2>
+<p>Velora Read declares no persistent content scripts and has no host access to websites. It uses the <code>activeTab</code> permission, which grants temporary access to the current tab only after an explicit user gesture, together with <code>scripting</code> to run one of three functions on that page at that moment:</p>
+<ul><li>read the visible article text (Save);</li><li>apply Bionic Reading, which changes only how words are displayed by wrapping the first half of each word in a bold element inside paragraphs, lists and headings (Apply);</li><li>undo that change (Restore).</li></ul>
+<p>The Bionic transform is the only modification the extension ever makes to a page. It never clicks, submits, fills forms, navigates, or interacts with page scripts, and it cannot read any other tab or any page in the background.</p>
+<h2>Permissions Explained</h2>
+<ul><li><strong>sidePanel</strong> - renders the reading list in Chrome's side panel.</li><li><strong>storage</strong> - saves entries, summaries, tags, preferences, and the optional API key locally.</li><li><strong>activeTab</strong> - temporary access to the current page, only after you interact with the extension.</li><li><strong>scripting</strong> - reads the article text (Save) or applies/undoes Bionic Reading on the active tab when you click.</li><li><strong>host permission for api.groq.com</strong> - allows the optional, user-initiated AI requests.</li></ul>
+<h2>Data Deletion</h2>
+<p>All data can be removed at any time by deleting entries inside the panel, clicking &quot;Forget key&quot;, or uninstalling the extension. Uninstalling removes all locally stored data.</p>
+<h2>Changes to This Policy</h2>
+<p>Any future changes to this policy will be published with an updated extension version and a new &quot;Last updated&quot; date.</p>
+<h2>Velora Keys</h2>
+<p>If you also use Velora Keys and have approved this extension there, this extension can ask Velora Keys for your AI API key when it has none of its own saved. The request travels over Chrome's local messaging between your own installed extensions; nothing is sent to a server. The key is used for this extension's requests to the AI provider, exactly as if you had pasted it here, and this extension does not store it. You can revoke the approval in Velora Keys at any time.</p>
+<h2>Contact</h2>
+<p>Questions about this policy or about your data: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></p>
+<footer>Velora Suite - local-first browser tools. Contact: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Privacy Policy - Velora Translate</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<div class="crumb"><a href="../index.html">Velora Suite</a> / Velora Translate</div>
+<h1>Privacy Policy - Velora Translate</h1>
+<p><strong>Last updated:</strong> April 2026</p>
+<h2>Overview</h2>
+<p>Velora Translate is a local-only Chrome extension that provides context-aware AI translation for text the user selects on any web page. It maintains a personal glossary and translation memory entirely on the user's device. It is designed with a privacy-first architecture.</p>
+<h2>Data Collection</h2>
+<p>Velora Translate does <strong>not</strong> collect, transmit, or store any user data on external servers. There is no analytics, no tracking, and no telemetry transmitted outside of the browser.</p>
+<h2>How Data Is Handled</h2>
+<ul><li><strong>Local storage only.</strong> All user preferences, API keys, personal glossary entries, and translation memory are stored exclusively in <code>chrome.storage.local</code> on the user's device. Nothing is sent to any server operated by the extension developer.</li><li><strong>Personal glossary.</strong> Term-to-translation pairs the user defines are stored locally and used to influence future translations for consistency. These never leave the browser.</li><li><strong>Translation memory.</strong> Previously translated segments are cached locally so repeated phrases are not re-sent to the API. This cache lives only on the user's device.</li><li><strong>No user accounts.</strong> The extension does not require or support user accounts, login, or registration of any kind.</li></ul>
+<h2>External API Usage</h2>
+<p>The only external network request made by this extension is to <strong>api.groq.com</strong> when the user explicitly triggers a translation. This request:</p>
+<ul><li>Uses the user's own Groq API key, which they provide and store locally.</li><li>Sends the selected text, target language, and optionally a small set of relevant glossary terms to the Groq API.</li><li>Is initiated exclusively by manual user action (context menu click or side panel button); there are no background, scheduled, or automatic API calls.</li></ul>
+<p>The extension developer has no access to the user's API key or to any data sent to or received from api.groq.com. Usage of the Groq API is governed by Groq's own terms of service and privacy policy.</p>
+<h2>Page Content Access</h2>
+<p>The extension only reads text that the user has explicitly highlighted on the active page. It does not read the rest of the page, track browsing behavior, or run continuously.</p>
+<h2>Permissions Justification</h2>
+<table><thead><tr><th>Permission</th><th>Purpose</th></tr></thead><tbody><tr><td><code>sidePanel</code></td><td>Opens the extension UI as a Chrome side panel to show translations and manage the glossary</td></tr><tr><td><code>activeTab</code></td><td>Accesses the currently focused tab so the extension can read the user's selection when a translation is requested</td></tr><tr><td><code>scripting</code></td><td>Executes a one-time script on the active tab to retrieve the user-selected text</td></tr><tr><td><code>contextMenus</code></td><td>Adds a right-click &quot;Translate&quot; menu item so the user can translate selected text directly</td></tr><tr><td><code>storage</code></td><td>Saves API key, preferences, glossary, and translation memory locally in <code>chrome.storage.local</code></td></tr><tr><td><code>host_permissions: api.groq.com</code></td><td>Sends translation requests using the user's own API key</td></tr></tbody></table>
+<h2>Changes to This Policy</h2>
+<p>If this policy is updated, the new version will be published alongside the extension update on the Chrome Web Store.</p>
+<h2>Velora Keys</h2>
+<p>If you also use Velora Keys and have approved this extension there, this extension can ask Velora Keys for your AI API key when it has none of its own saved. The request travels over Chrome's local messaging between your own installed extensions; nothing is sent to a server. The key is used for this extension's requests to the AI provider, exactly as if you had pasted it here, and this extension does not store it. You can revoke the approval in Velora Keys at any time.</p>
+<h2>Contact</h2>
+<p>Questions about this policy or about your data: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></p>
+<footer>Velora Suite - local-first browser tools. Contact: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></footer>
+</main>
+</body>
+</html>

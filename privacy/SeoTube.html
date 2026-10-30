@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Privacy Policy - Velora Tube</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<div class="crumb"><a href="../index.html">Velora Suite</a> / Velora Tube</div>
+<h1>Privacy Policy - Velora Tube</h1>
+<p><strong>Last updated:</strong> September 2026</p>
+<h2>Overview</h2>
+<p>Velora Tube is a local-only Chrome extension that helps YouTube creators draft and review video metadata (titles, descriptions, and tags) using AI-assisted suggestions. It is designed with a privacy-first architecture.</p>
+<h2>Data Collection</h2>
+<p>Velora Tube does <strong>not</strong> collect, transmit, or store any user data on external servers. There is no analytics, no tracking, and no telemetry transmitted outside of the browser.</p>
+<h2>How Data Is Handled</h2>
+<ul><li><strong>Local storage only.</strong> All user preferences, API keys, generation history, and draft metadata are stored exclusively in <code>chrome.storage.local</code> on the user's device. Nothing is sent to any server operated by the extension developer.</li><li><strong>No external analytics or telemetry.</strong> The extension includes a local activity log stored in <code>chrome.storage.local</code> for the user's own reference. This data never leaves the browser.</li><li><strong>No user accounts.</strong> The extension does not require or support user accounts, login, or registration of any kind.</li></ul>
+<h2>External API Usage</h2>
+<p>The only external network request made by this extension is to <strong>api.groq.com</strong> when the user explicitly clicks the &quot;Generate&quot; or &quot;Generate A/B&quot; button. This request:</p>
+<ul><li>Uses the user's own Groq API key, which they provide and store locally.</li><li>Sends the current topic, detected YouTube page context, and selected generation settings to the Groq API to produce metadata suggestions.</li><li>Is initiated exclusively by manual user action; there are no background, scheduled, or automatic API calls.</li></ul>
+<p>The extension developer has no access to the user's API key or to any data sent to or received from api.groq.com. Usage of the Groq API is governed by Groq's own terms of service and privacy policy.</p>
+<h2>YouTube Page Access</h2>
+<p>When the user clicks &quot;Detect Context,&quot; the extension reads publicly visible information from the active YouTube tab (video title, channel name, search query, meta keywords, and visible search result titles). This data is used locally to build the AI prompt and is never transmitted to any server other than api.groq.com at the user's explicit request.</p>
+<p>When the user clicks &quot;Read video&quot; on a YouTube watch page, the extension runs a one-time read-only script in the page's main world to read the video metadata that YouTube already exposes to the page (<code>ytInitialPlayerResponse.videoDetails</code>: title, public tags, short description, length, view count, channel name). The result is shown in the panel and can be copied; it is not stored unless the user pastes it into a field, and it is never sent anywhere unless the user later clicks an AI action.</p>
+<p>The local SEO score and the CTA/links block are computed entirely inside the browser and make no network requests. Saved links are stored in <code>chrome.storage.local</code>.</p>
+<p>The extension never reads pages in the background, never clicks or submits anything on YouTube, and never modifies page content.</p>
+<h2>Permissions Justification</h2>
+<table><thead><tr><th>Permission</th><th>Purpose</th></tr></thead><tbody><tr><td><code>sidePanel</code></td><td>Opens the extension UI as a Chrome side panel</td></tr><tr><td><code>activeTab</code></td><td>Reads the URL and title of the current tab to detect YouTube context</td></tr><tr><td><code>scripting</code></td><td>Executes a one-time read-only script on the active YouTube tab when the user clicks &quot;Detect Context&quot; or &quot;Read video&quot; (page metadata and <code>ytInitialPlayerResponse.videoDetails</code>)</td></tr><tr><td><code>storage</code></td><td>Saves API key, preferences, saved CTA links, and generation history locally in <code>chrome.storage.local</code></td></tr></tbody></table>
+<p>No permissions were added in version 1.1.</p>
+<table><thead><tr><th><code>host_permissions: api.groq.com</code></th><th>Sends AI generation requests using the user's own API key</th></tr></thead><tbody><tr><td><code>host_permissions: youtube.com</code></td><td>Allows the context detection script to run on YouTube pages</td></tr></tbody></table>
+<h2>Changes to This Policy</h2>
+<p>If this policy is updated, the new version will be published alongside the extension update on the Chrome Web Store.</p>
+<h2>Velora Keys</h2>
+<p>If you also use Velora Keys and have approved this extension there, this extension can ask Velora Keys for your AI API key when it has none of its own saved. The request travels over Chrome's local messaging between your own installed extensions; nothing is sent to a server. The key is used for this extension's requests to the AI provider, exactly as if you had pasted it here, and this extension does not store it. You can revoke the approval in Velora Keys at any time.</p>
+<h2>Contact</h2>
+<p>Questions about this policy or about your data: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></p>
+<footer>Velora Suite - local-first browser tools. Contact: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></footer>
+</main>
+</body>
+</html>

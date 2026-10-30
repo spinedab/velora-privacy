@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Privacy Policy - Velora Focus</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<div class="crumb"><a href="../index.html">Velora Suite</a> / Velora Focus</div>
+<h1>Privacy Policy - Velora Focus</h1>
+<p><strong>Last updated:</strong> September 2026</p>
+<h2>Overview</h2>
+<p>Velora Focus is a local-only Chrome extension that combines a Pomodoro timer, a distracting-site blocker with an &quot;intention wall&quot;, a one-click distraction tab grouper, local streak statistics and local time tracking to help the user stay focused. It is designed with a privacy-first architecture.</p>
+<h2>Data Collection</h2>
+<p>Velora Focus does <strong>not</strong> collect, transmit, or store any user data on external servers. There is no analytics, no tracking, and no telemetry transmitted outside of the browser.</p>
+<h2>How Data Is Handled</h2>
+<ul><li><strong>Local storage only.</strong> All user preferences, API keys, focus session history, blocklists, intentions written on the wall, temporary allowances and time-tracking statistics are stored exclusively in <code>chrome.storage.local</code> on the user's device. Nothing is sent to any server operated by the extension developer.</li><li><strong>No browsing history collection.</strong> The extension does <strong>not</strong> store URLs you visit. Its block rules match against user-chosen domains or patterns on the device, and its time tracker records only minutes per user-defined project -- never a list of pages visited. When a blocked site is redirected to the intention wall, the wall shows the blocked domain so you can decide; only the domain, your intention text and the chosen duration are saved locally.</li><li><strong>No user accounts.</strong> The extension does not require or support user accounts, login, or registration of any kind.</li></ul>
+<h2>External API Usage</h2>
+<p>The only external network request made by this extension is to <strong>api.groq.com</strong>, and only when the user explicitly clicks &quot;Weekly summary&quot;. This request:</p>
+<ul><li>Uses the user's own Groq API key, which they provide and store locally.</li><li>Sends only aggregated numbers (session counts, minutes per project, current streak). No URLs, no intentions, no page content.</li><li>Is initiated exclusively by manual user action; there are no background, scheduled, or automatic API calls.</li></ul>
+<p>The extension developer has no access to the user's API key or focus data. Usage of the Groq API is governed by Groq's own terms of service and privacy policy.</p>
+<h2>Site Blocking and the Intention Wall</h2>
+<p>Site blocking is implemented with Chrome's <code>declarativeNetRequest</code> API. Rules live in <code>chrome.storage.local</code> and are enforced by Chrome itself. Instead of a bare error page, a blocked navigation is redirected to a page bundled inside the extension (<code>wall.html</code>). To make that redirect possible, Chrome requires <code>wall.html</code> to be declared as a web-accessible resource for the sites that may be redirected; because the user may block any domain, this declaration uses the <code>&lt;all_urls&gt;</code> match pattern. <strong>This is not a host permission and grants the extension no ability to read or change any website</strong>; it only allows a site the user chose to block to be sent to the extension's own local page. When the user writes an intention and picks a duration, a temporary allow rule is created and removed automatically by a local alarm. The extension never opens a site by itself.</p>
+<h2>Tabs and Tab Groups</h2>
+<p>The <code>tabs</code> and <code>tabGroups</code> permissions are used only when the user clicks &quot;Group distraction tabs&quot;. At that moment the extension reads the URL of the tabs in the current window, compares them with the user's own blocklist, and moves matching tabs into a collapsed tab group named &quot;Distractions&quot;. Tab URLs are not stored or transmitted. The extension never closes, reloads, navigates or injects code into tabs.</p>
+<h2>Permissions Justification</h2>
+<table><thead><tr><th>Permission</th><th>Purpose</th></tr></thead><tbody><tr><td><code>sidePanel</code></td><td>Opens the timer, blocklist, and stats UI as a Chrome side panel</td></tr><tr><td><code>storage</code></td><td>Saves API key, preferences, blocklists, timer settings, intentions and local statistics in <code>chrome.storage.local</code></td></tr><tr><td><code>alarms</code></td><td>Schedules Pomodoro transitions and the expiry of temporary allowances granted from the intention wall</td></tr><tr><td><code>notifications</code></td><td>Displays desktop notifications when a focus interval ends or a break begins</td></tr><tr><td><code>declarativeNetRequest</code></td><td>Redirects user-defined distracting sites to the local intention wall during focus sessions using Chrome's native rules engine; also validates regex patterns</td></tr><tr><td><code>declarativeNetRequestFeedback</code></td><td>Surfaces to the side panel how many blocks occurred during a session so the user can review their own activity; this data stays local</td></tr><tr><td><code>tabs</code></td><td>Reads the URLs of open tabs in the current window only when the user clicks &quot;Group distraction tabs&quot;</td></tr><tr><td><code>tabGroups</code></td><td>Creates and collapses the &quot;Distractions&quot; tab group on that click</td></tr><tr><td><code>web<em>accessible</em>resources: wall.html</code> (<code>&lt;all_urls&gt;</code>)</td><td>Lets Chrome redirect any blocked site to the extension's own wall page. Not a host permission; no site access</td></tr><tr><td><code>host_permissions: api.groq.com</code></td><td>Sends optional AI reflection requests using the user's own API key</td></tr></tbody></table>
+<h2>Changes to This Policy</h2>
+<p>If this policy is updated, the new version will be published alongside the extension update on the Chrome Web Store.</p>
+<h2>Velora Keys</h2>
+<p>If you also use Velora Keys and have approved this extension there, this extension can ask Velora Keys for your AI API key when it has none of its own saved. The request travels over Chrome's local messaging between your own installed extensions; nothing is sent to a server. The key is used for this extension's requests to the AI provider, exactly as if you had pasted it here, and this extension does not store it. You can revoke the approval in Velora Keys at any time.</p>
+<h2>Contact</h2>
+<p>Questions about this policy or about your data: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></p>
+<footer>Velora Suite - local-first browser tools. Contact: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></footer>
+</main>
+</body>
+</html>

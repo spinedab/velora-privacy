@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Privacy Policy - Velora Code Review</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<div class="crumb"><a href="../index.html">Velora Suite</a> / Velora Code Review</div>
+<h1>Privacy Policy - Velora Code Review</h1>
+<p><strong>Last updated:</strong> April 2026</p>
+<h2>Overview</h2>
+<p>Velora Code Review is a local-only Chrome extension that assists developers in reviewing GitHub pull requests. It surfaces the diff of the current PR in a side panel and, on explicit user action, sends it to an AI model for a review checklist and suggestions. It is designed with a privacy-first architecture.</p>
+<h2>Data Collection</h2>
+<p>Velora Code Review does <strong>not</strong> collect, transmit, or store any user data on external servers. There is no analytics, no tracking, and no telemetry transmitted outside of the browser.</p>
+<h2>How Data Is Handled</h2>
+<ul><li><strong>Local storage only.</strong> All user preferences, API keys, custom review checklists, and saved review notes are stored exclusively in <code>chrome.storage.local</code> on the user's device. Nothing is sent to any server operated by the extension developer.</li><li><strong>No user accounts.</strong> The extension does not require or support user accounts, login, or registration of any kind. It does not authenticate to GitHub.</li><li><strong>Read-only on GitHub.</strong> The extension reads the diff of the pull request the user is viewing only when the user clicks a review action. It never writes, comments, approves, or merges.</li></ul>
+<h2>External API Usage</h2>
+<p>The only AI-related external network request made by this extension is to <strong>api.groq.com</strong>, and only when the user explicitly clicks &quot;Review&quot; or another analysis action. This request:</p>
+<ul><li>Uses the user's own Groq API key, which they provide and store locally.</li><li>Sends the selected portions of the current PR diff and the user's chosen checklist settings to the Groq API to produce review suggestions.</li><li>Is initiated exclusively by manual user action; there are no background, scheduled, or automatic API calls.</li></ul>
+<p>The extension also reads from <strong>github.com</strong> tabs (only the active tab, only on user action) to extract the PR diff. It does not make any authenticated API requests to github.com; it relies on what is already visible in the user's logged-in browser session.</p>
+<p>The extension developer has no access to the user's API key, diff content, or review output. Usage of the Groq API is governed by Groq's own terms of service and privacy policy.</p>
+<h2>GitHub Page Access</h2>
+<p>When the user clicks a review action on a GitHub PR page, the extension reads the diff content visible in that tab to build the AI prompt. It does <strong>not</strong>:</p>
+<ul><li>Post comments, reviews, approvals, or merges.</li><li>Modify the PR page in any way.</li><li>Access repositories, issues, or pages the user is not currently viewing.</li><li>Make any authenticated API calls on the user's behalf.</li></ul>
+<h2>Permissions Justification</h2>
+<table><thead><tr><th>Permission</th><th>Purpose</th></tr></thead><tbody><tr><td><code>sidePanel</code></td><td>Opens the extension UI as a Chrome side panel with the review checklist and AI suggestions</td></tr><tr><td><code>activeTab</code></td><td>Accesses the currently focused GitHub PR tab when the user initiates a review</td></tr><tr><td><code>scripting</code></td><td>Executes a one-time read-only script on the active GitHub tab to extract the visible PR diff when the user clicks Review</td></tr><tr><td><code>storage</code></td><td>Saves API key, preferences, custom checklists, and local notes in <code>chrome.storage.local</code></td></tr><tr><td><code>host_permissions: api.groq.com</code></td><td>Sends AI review requests using the user's own API key</td></tr><tr><td><code>host_permissions: github.com</code></td><td>Allows the scripting permission to read the visible PR diff on GitHub pages when the user initiates a review</td></tr></tbody></table>
+<h2>Changes to This Policy</h2>
+<p>If this policy is updated, the new version will be published alongside the extension update on the Chrome Web Store.</p>
+<h2>Velora Keys</h2>
+<p>If you also use Velora Keys and have approved this extension there, this extension can ask Velora Keys for your AI API key when it has none of its own saved. The request travels over Chrome's local messaging between your own installed extensions; nothing is sent to a server. The key is used for this extension's requests to the AI provider, exactly as if you had pasted it here, and this extension does not store it. You can revoke the approval in Velora Keys at any time.</p>
+<h2>Contact</h2>
+<p>Questions about this policy or about your data: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></p>
+<footer>Velora Suite - local-first browser tools. Contact: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></footer>
+</main>
+</body>
+</html>

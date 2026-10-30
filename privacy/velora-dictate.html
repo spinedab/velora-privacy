@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Privacy Policy - Velora Dictate</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<div class="crumb"><a href="../index.html">Velora Suite</a> / Velora Dictate</div>
+<h1>Privacy Policy - Velora Dictate</h1>
+<p><strong>Last updated:</strong> September 2026</p>
+<h2>Overview</h2>
+<p>Velora Dictate is a local-first Chrome extension that turns speech into text in the side panel, using the speech recognition built into your browser. You dictate, edit the transcript, and copy or download it. It is designed with a privacy-first architecture, with one important disclosure about the audio, below.</p>
+<h2>Data Collection</h2>
+<p>Velora Dictate does <strong>not</strong> collect, transmit, or store any user data on external servers. There is no analytics, no tracking, and no telemetry, and the extension itself makes no network requests of any kind.</p>
+<h2>Important: who processes your audio</h2>
+<p>Velora Dictate uses the browser's own <code>SpeechRecognition</code> API. <strong>In Chrome, that API sends audio to Google's speech recognition service</strong> in order to transcribe it. This is a property of the browser, not of this extension:</p>
+<ul><li>Velora Dictate never receives your audio. The extension has no server and makes no network requests.</li><li>The extension cannot see, intercept or redirect what the browser sends to that service.</li><li>Whatever Google does with audio submitted through Chrome's speech API is governed by Google's own privacy policy, not this one.</li></ul>
+<p>If that is not acceptable for what you need to dictate, do not use this extension (or any browser-based dictation) for that content. We would rather say this plainly than let &quot;local-first&quot; imply something untrue about the audio.</p>
+<p>The <strong>transcript</strong>, once produced, stays on your device.</p>
+<h2>How Data Is Handled</h2>
+<ul><li><strong>Local storage only.</strong> The transcript, your saved dictation history, quick phrases and preferences (language, formatting, continuous mode) are stored exclusively in <code>chrome.storage.local</code> on the user's device.</li><li><strong>No page access whatsoever.</strong> The extension has no <code>activeTab</code>, no <code>scripting</code>, no <code>tabs</code> permission and no content scripts. It cannot see what you browse or read anything on any page. Recognition runs inside the extension's own side panel page, which is why there is no offscreen document either.</li><li><strong>Microphone access is explicit.</strong> The first time you press Start, Chrome asks you to allow the microphone for this extension. You can revoke it at any time from <code>chrome://extensions</code>.</li><li><strong>The microphone only runs while you dictate.</strong> It starts when you press Start and stops when you press Stop (or when you close the panel). In continuous mode the extension restarts the recogniser when the browser ends a session on its own — it does not keep listening after you stop.</li><li><strong>Clipboard on demand.</strong> The clipboard is written only when you click Copy. The clipboard is never read.</li><li><strong>User-controlled downloads.</strong> A <code>.txt</code> or <code>.md</code> file is saved only when you click Download.</li><li><strong>No user accounts.</strong> The extension does not require or support user accounts, login, or registration of any kind.</li></ul>
+<h2>Permissions Explained</h2>
+<ul><li><strong>sidePanel</strong> - renders the dictation workspace in Chrome's side panel.</li><li><strong>storage</strong> - saves your transcript history, quick phrases and preferences locally.</li><li><strong>clipboardWrite</strong> - copies the transcript when you click Copy.</li><li><strong>downloads</strong> - saves the <code>.txt</code> or <code>.md</code> file when you click Download.</li></ul>
+<p>There is no host permission and no page permission of any kind.</p>
+<h2>Data Deletion</h2>
+<p>The current transcript can be cleared with the Clear button; saved dictations can be deleted individually from the history. Uninstalling the extension removes all locally stored data.</p>
+<h2>Changes to This Policy</h2>
+<p>Any future changes to this policy will be published with an updated extension version and a new &quot;Last updated&quot; date.</p>
+<h2>Contact</h2>
+<p>Questions about this policy or about your data: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></p>
+<footer>Velora Suite - local-first browser tools. Contact: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></footer>
+</main>
+</body>
+</html>

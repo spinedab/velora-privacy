@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Privacy Policy - Velora Debug</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<div class="crumb"><a href="../index.html">Velora Suite</a> / Velora Debug</div>
+<h1>Privacy Policy - Velora Debug</h1>
+<p><strong>Last updated:</strong> September 2026</p>
+<h2>Overview</h2>
+<p>Velora Debug is a local-first Chrome extension that helps developers understand errors, stack traces and code snippets they paste into the side panel, with local hints and an optional AI explanation. It is designed with a privacy-first architecture.</p>
+<h2>Data Collection</h2>
+<p>Velora Debug does <strong>not</strong> collect, transmit, or store any user data on external servers. There is no analytics, no tracking, and no telemetry transmitted outside of the browser.</p>
+<h2>How Data Is Handled</h2>
+<ul><li><strong>Local storage only.</strong> Session history, the optional API key and preferences are stored exclusively in <code>chrome.storage.local</code> on the user's device.</li><li><strong>Local pre-processing first.</strong> Before anything can be sent, the extension detects the language, parses stack frames, replaces home directories (<code>/Users/name</code>, <code>/home/name</code>, <code>C:\Users\name</code>) with <code>~</code>, and redacts emails, bearer tokens, JWTs, API keys, passwords, credentials embedded in URLs and public IP addresses. The panel shows the count of redactions and a preview of the exact text that would be sent.</li><li><strong>History stores redacted text only.</strong> Saved sessions contain the redacted input, the detected language, matched hint titles and the AI answer, never the original unredacted text.</li><li><strong>Clipboard on demand.</strong> The clipboard is only written when the user clicks Copy. The extension never reads the clipboard.</li><li><strong>No user accounts.</strong> The extension does not require or support user accounts, login, or registration of any kind.</li></ul>
+<h2>External API Usage</h2>
+<p>The only external network request made by this extension is to <strong>api.groq.com</strong>, and only when the user explicitly clicks &quot;Explain&quot;, &quot;Suggest fix&quot; or &quot;Minimal repro&quot;. This request:</p>
+<ul><li>Uses the user's own Groq API key, which they provide and store locally.</li><li>Sends only the redacted error/code text and optional context shown in the preview.</li><li>Is initiated exclusively by manual user action; there are no background, scheduled, or automatic API calls.</li></ul>
+<p>The extension developer has no access to the user's API key or pasted content. Usage of the Groq API is governed by Groq's own terms of service and privacy policy. Local analysis and local hints work without a key and without any network access.</p>
+<h2>Page Access</h2>
+<p>Velora Debug does not inject content scripts, does not request access to any tab and does not read the content of any web page. It runs entirely inside its own side panel; all input is pasted by the user.</p>
+<h2>Permissions Explained</h2>
+<ul><li><strong>sidePanel</strong> - renders the debugging assistant in Chrome's side panel.</li><li><strong>storage</strong> - saves session history and the optional API key locally.</li><li><strong>clipboardWrite</strong> - copies an explanation, fix or session to the clipboard when the user clicks Copy.</li><li><strong>host permission for api.groq.com</strong> - allows the optional, user-initiated AI request.</li></ul>
+<h2>Data Deletion</h2>
+<p>All data can be removed at any time by deleting sessions inside the panel, clicking &quot;Clear history&quot;, clicking &quot;Forget key&quot;, or uninstalling the extension. Uninstalling removes all locally stored data.</p>
+<h2>Changes to This Policy</h2>
+<p>Any future changes to this policy will be published with an updated extension version and a new &quot;Last updated&quot; date.</p>
+<h2>Velora Keys</h2>
+<p>If you also use Velora Keys and have approved this extension there, this extension can ask Velora Keys for your AI API key when it has none of its own saved. The request travels over Chrome's local messaging between your own installed extensions; nothing is sent to a server. The key is used for this extension's requests to the AI provider, exactly as if you had pasted it here, and this extension does not store it. You can revoke the approval in Velora Keys at any time.</p>
+<h2>Contact</h2>
+<p>Questions about this policy or about your data: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></p>
+<footer>Velora Suite - local-first browser tools. Contact: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></footer>
+</main>
+</body>
+</html>

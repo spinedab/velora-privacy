@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Privacy Policy - Velora Tok</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<div class="crumb"><a href="../index.html">Velora Suite</a> / Velora Tok</div>
+<h1>Privacy Policy - Velora Tok</h1>
+<p><strong>Last updated:</strong> August 2026</p>
+<h2>Overview</h2>
+<p>Velora Tok is a local-only Chrome extension that gives TikTok creators a side panel command center: a content planner with reminders, AI-assisted captions, hooks and scripts, hashtag sets, a local metrics tracker for videos, and a comment reply assistant. It is designed with a privacy-first, human-in-the-loop architecture: <strong>it never posts, likes, follows, comments, or sends anything on the user's behalf.</strong> The user always performs the final action on TikTok.</p>
+<h2>Data Collection</h2>
+<p>Velora Tok does <strong>not</strong> collect, transmit, or store any user data on external servers. There is no analytics, no tracking, and no telemetry transmitted outside of the browser.</p>
+<h2>How Data Is Handled</h2>
+<ul><li><strong>Local storage only.</strong> Plans, captions, notes, hashtag sets, captured video metrics, captured comments, the creator profile, and the optional API key are stored exclusively in <code>chrome.storage.local</code> on the user's device.</li><li><strong>Capture on demand.</strong> Video metrics, profile grid data, and comments are read from the TikTok page the user is currently viewing, only when the user clicks a capture button. Nothing is read in the background and no other tab is accessed.</li><li><strong>Reminders are local.</strong> Scheduled reminders use Chrome's alarms and notifications. A reminder only shows a notification; clicking it opens the TikTok upload page in a new tab. The extension does not upload files, fill forms, or press Post.</li><li><strong>Clipboard on demand.</strong> The clipboard is written only when the user clicks a Copy button. The clipboard is never read.</li><li><strong>User-controlled exports.</strong> CSV metrics and JSON backups are downloaded only when the user requests them. Backups never include the API key.</li><li><strong>No user accounts.</strong> The extension does not require or support user accounts, login, or registration of any kind, and it never accesses the user's TikTok credentials or session.</li></ul>
+<h2>External API Usage</h2>
+<p>The only external network request made by this extension is to <strong>api.groq.com</strong>, and only when the user explicitly clicks an AI button (captions, hooks, script, ideas, optimize, translate, hashtag suggestions, comment triage). This request:</p>
+<ul><li>Uses the user's own Groq API key, which they provide and store locally.</li><li>Sends only the text needed for that action: the topic or caption the user typed, the optional creator profile fields, and, for comment triage, the captured comment texts.</li><li>Is initiated exclusively by manual user action; there are no background, scheduled, or automatic API calls.</li></ul>
+<p>The extension developer has no access to the user's API key, content, or metrics. Usage of the Groq API is governed by Groq's own terms of service and privacy policy.</p>
+<h2>Page Access</h2>
+<p>Velora Tok declares no persistent content scripts. It has host access to <code>www.tiktok.com</code> so that, when the user clicks Capture, it can run a one-time read-only script on the active TikTok tab to read publicly visible information: the open video's caption, hashtags, and public counters (views, likes, comments, shares, saves), the open profile's public grid and counters, or the comments currently rendered on screen. It does not modify pages, does not interact with TikTok's interface, and does not read private messages, drafts, or account settings.</p>
+<h2>Permissions Explained</h2>
+<ul><li><strong>sidePanel</strong> - renders the command center in Chrome's side panel.</li><li><strong>storage</strong> - saves plans, sets, metrics, comments, profile, and the optional API key locally.</li><li><strong>scripting</strong> - runs the one-time read-only capture on the active TikTok tab when you click Capture.</li><li><strong>alarms</strong> - fires your posting reminders at the time you chose.</li><li><strong>notifications</strong> - shows the reminder notification.</li><li><strong>clipboardWrite</strong> - copies captions, hashtags, and reply drafts when you click Copy.</li><li><strong>downloads</strong> - saves CSV metrics and JSON backups when you request them.</li><li><strong>host permission for www.tiktok.com</strong> - allows the capture script to read the TikTok page you are viewing.</li><li><strong>host permission for api.groq.com</strong> - allows the optional, user-initiated AI requests.</li></ul>
+<h2>Data Deletion</h2>
+<p>All data can be removed at any time from Settings (&quot;Delete all local data&quot;), by deleting individual items, clicking &quot;Forget key&quot;, or uninstalling the extension. Uninstalling removes all locally stored data.</p>
+<h2>Changes to This Policy</h2>
+<p>Any future changes to this policy will be published with an updated extension version and a new &quot;Last updated&quot; date.</p>
+<h2>Velora Keys</h2>
+<p>If you also use Velora Keys and have approved this extension there, this extension can ask Velora Keys for your AI API key when it has none of its own saved. The request travels over Chrome's local messaging between your own installed extensions; nothing is sent to a server. The key is used for this extension's requests to the AI provider, exactly as if you had pasted it here, and this extension does not store it. You can revoke the approval in Velora Keys at any time.</p>
+<h2>Contact</h2>
+<p>Questions about this policy or about your data: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></p>
+<footer>Velora Suite - local-first browser tools. Contact: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></footer>
+</main>
+</body>
+</html>

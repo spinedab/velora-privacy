@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Privacy Policy - Velora Coins</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<div class="crumb"><a href="../index.html">Velora Suite</a> / Velora Coins</div>
+<h1>Privacy Policy — Velora Coins</h1>
+<p><em>Last updated: 3 September 2026</em></p>
+<h2>The short version</h2>
+<p>Velora Coins collects nothing. It has no server, no account system and no analytics. Your holdings never leave your computer.</p>
+<h2>What is stored, and where</h2>
+<p>Everything is stored by Chrome on your own machine, in <code>chrome.storage.local</code>:</p>
+<ul><li>the holdings you entered (coin, amount, and the cost per unit if you gave one);</li><li>your chosen display currency;</li><li>the last set of prices received, so the panel can show something before you refresh.</li></ul>
+<p>None of this is transmitted anywhere. Uninstalling the extension deletes it, and the <strong>Delete all</strong> button in the panel erases it on demand.</p>
+<h2>The one network request</h2>
+<p>When — and only when — you press <strong>Refresh prices</strong>, the extension calls <code>https://api.coingecko.com</code>. That request contains the CoinGecko identifiers of the coins in your portfolio and the currency you selected. It contains no name, no email, no account, no wallet address and no amount: CoinGecko is asked what a coin costs, never how much of it you own. The multiplication happens locally.</p>
+<p>No request is made at any other time. There is no alarm, no poller and no background sync. CoinGecko's own handling of the request is covered by their privacy policy.</p>
+<h2>What is never collected</h2>
+<p>No personal data, no identifiers, no browsing history, no page content, no telemetry, no crash reports. The extension cannot read the pages you visit: its only host permission is CoinGecko's API.</p>
+<h2>Wallets, keys and money</h2>
+<p>Velora Coins never connects to a wallet, an exchange or a custodian, and never asks for a seed phrase, a private key, an API key, or payment details. It cannot move funds, place an order or execute a transaction. It is an arithmetic tool over numbers you typed in, and its output is <strong>not investment advice</strong>.</p>
+<h2>Data sharing</h2>
+<p>Nothing is sold, shared or disclosed to anyone. There is nobody to share it with.</p>
+<h2>Contact</h2>
+<p>Questions about this policy or about your data: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></p>
+<footer>Velora Suite - local-first browser tools. Contact: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></footer>
+</main>
+</body>
+</html>

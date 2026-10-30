@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Privacy Policy - Velora Health</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<div class="crumb"><a href="../index.html">Velora Suite</a> / Velora Health</div>
+<h1>Privacy Policy - Velora Health</h1>
+<p><strong>Last updated:</strong> September 2026</p>
+<h2>Overview</h2>
+<p>Velora Health is a local-only Chrome extension that reminds you to rest your eyes, fix your posture and drink water on a schedule you choose. It lives entirely in its toolbar popup and Chrome's alarm and notification APIs. It is designed with a privacy-first architecture.</p>
+<h2>Data Collection</h2>
+<p>Velora Health does <strong>not</strong> collect, transmit, or store any user data on external servers. There is no analytics, no tracking, and no telemetry transmitted outside of the browser.</p>
+<h2>How Data Is Handled</h2>
+<ul><li><strong>No network requests of any kind.</strong> This extension has no host permissions and makes no <code>fetch</code>, XHR, WebSocket or beacon calls. There is no AI, no API key and no server component.</li><li><strong>No page access whatsoever.</strong> The extension has no <code>activeTab</code>, no <code>scripting</code>, no <code>tabs</code> permission and no content scripts. It cannot see what you browse, which sites you visit, or anything on any page. It does not know whether you are working — it only knows the clock and the schedule you set.</li><li><strong>Local storage only.</strong> Your intervals, work-hours window and the log of completed breaks are stored exclusively in <code>chrome.storage.local</code> on the user's device.</li><li><strong>What the log contains.</strong> One entry per break you mark as Done: a timestamp and which reminder it was. Nothing else. It exists so the popup can show a weekly chart and a streak.</li><li><strong>Notifications are local.</strong> Reminders are produced by Chrome's own notification system on your device. Nothing about them is reported anywhere.</li><li><strong>Export is manual.</strong> The CSV of your log is produced only when you click the export link, and it is generated in the popup itself — the extension does not even request the <code>downloads</code> permission.</li><li><strong>No user accounts.</strong> The extension does not require or support user accounts, login, or registration of any kind.</li></ul>
+<h2>Permissions Explained</h2>
+<ul><li><strong>alarms</strong> - schedules your reminders. A service worker cannot keep a timer alive, so Chrome's alarm system is what wakes the extension at the right moment.</li><li><strong>notifications</strong> - shows the reminder, with its Done and Snooze buttons.</li><li><strong>storage</strong> - saves your intervals, work-hours window and completion log locally.</li></ul>
+<p>That is the entire permission list. There is deliberately nothing else.</p>
+<h2>Not Medical Advice</h2>
+<p>The 20-20-20 guidance and the posture and hydration intervals are general ergonomic conventions, not medical advice, and this extension does not diagnose or treat anything. If you have symptoms, talk to a professional.</p>
+<h2>Data Deletion</h2>
+<p>Everything can be removed at any time with &quot;Reset all&quot; in the popup, or by uninstalling the extension. Uninstalling removes all locally stored data.</p>
+<h2>Changes to This Policy</h2>
+<p>Any future changes to this policy will be published with an updated extension version and a new &quot;Last updated&quot; date.</p>
+<h2>Contact</h2>
+<p>Questions about this policy or about your data: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></p>
+<footer>Velora Suite - local-first browser tools. Contact: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></footer>
+</main>
+</body>
+</html>

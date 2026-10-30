@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Privacy Policy - FewFeed Workspace</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<div class="crumb"><a href="../index.html">Velora Suite</a> / FewFeed Workspace</div>
+<h1>Privacy Policy - FewFeed Workspace</h1>
+<p><strong>Last updated:</strong> April 2026</p>
+<h2>Overview</h2>
+<p>FewFeed Workspace is a local-only Chrome extension that helps users plan and draft content for Facebook groups and pages. It is a manual content planner: it never publishes anything for you. It is designed with a privacy-first architecture.</p>
+<h2>Data Collection</h2>
+<p>FewFeed Workspace does <strong>not</strong> collect, transmit, or store any user data on external servers. There is no analytics, no tracking, and no telemetry transmitted outside of the browser.</p>
+<h2>How Data Is Handled</h2>
+<ul><li><strong>Local storage only.</strong> All user preferences, API keys, saved drafts, scheduled items, and activity logs are stored exclusively in <code>chrome.storage.local</code> on the user's device. Nothing is sent to any server operated by the extension developer.</li><li><strong>No external analytics or telemetry.</strong> The extension includes a local activity log stored in <code>chrome.storage.local</code> for the user's own reference. This data never leaves the browser.</li><li><strong>No user accounts.</strong> The extension does not require or support user accounts, login, or registration of any kind.</li></ul>
+<h2>External API Usage</h2>
+<p>The only external network request made by this extension is to <strong>api.groq.com</strong> when the user explicitly clicks the &quot;Generate&quot; button. This request:</p>
+<ul><li>Uses the user's own Groq API key, which they provide and store locally.</li><li>Sends the current draft goal, notes, target info, and tone/language settings to the Groq API to produce a draft suggestion.</li><li>Is initiated exclusively by manual user action; there are no background, scheduled, or automatic API calls.</li></ul>
+<p>The extension developer has no access to the user's API key or to any data sent to or received from api.groq.com. Usage of the Groq API is governed by Groq's own terms of service and privacy policy.</p>
+<h2>Facebook Page Access</h2>
+<p>The extension includes a content script that runs on facebook.com pages. This script:</p>
+<ul><li><strong>Reads only.</strong> It scans the visible DOM to detect group names, page names, and their URLs so the user can select a posting target from the side panel.</li><li><strong>Detects the composer.</strong> It checks whether a text composer is open so the user can insert a draft manually.</li><li><strong>Does not modify page content automatically.</strong> Text insertion into the composer happens only when the user explicitly clicks &quot;Insert in composer.&quot;</li><li><strong>Does not scrape private data.</strong> It reads only publicly visible navigation links (group/page names and URLs) that are already rendered on screen.</li><li><strong>Does not interact with Facebook's API.</strong> No Facebook login tokens, cookies, or API endpoints are accessed.</li></ul>
+<h2>Permissions Justification</h2>
+<table><thead><tr><th>Permission</th><th>Purpose</th></tr></thead><tbody><tr><td><code>storage</code></td><td>Saves API key, preferences, drafts, and schedule queue locally in <code>chrome.storage.local</code></td></tr><tr><td><code>tabs</code></td><td>Queries the active tab to communicate with the content script and open target URLs in new tabs</td></tr><tr><td><code>alarms</code></td><td>Powers the local schedule queue -- sets browser alarms to mark drafts as &quot;due&quot; at the scheduled time (nothing is published; you post by hand)</td></tr><tr><td><code>sidePanel</code></td><td>Opens the extension UI as a Chrome side panel</td></tr><tr><td><code>activeTab</code></td><td>Reads the URL of the current tab to determine if the user is on a supported Facebook page</td></tr><tr><td><code>host_permissions: facebook.com</code></td><td>Allows the content script to run on Facebook pages for target detection and manual draft insertion</td></tr><tr><td><code>host_permissions: web.facebook.com</code></td><td>Same as above, for users who access Facebook via the web.facebook.com domain</td></tr><tr><td><code>host_permissions: api.groq.com</code></td><td>Sends AI draft generation requests using the user's own API key</td></tr></tbody></table>
+<h2>Changes to This Policy</h2>
+<p>If this policy is updated, the new version will be published alongside the extension update on the Chrome Web Store.</p>
+<h2>Velora Keys</h2>
+<p>If you also use Velora Keys and have approved this extension there, this extension can ask Velora Keys for your AI API key when it has none of its own saved. The request travels over Chrome's local messaging between your own installed extensions; nothing is sent to a server. The key is used for this extension's requests to the AI provider, exactly as if you had pasted it here, and this extension does not store it. You can revoke the approval in Velora Keys at any time.</p>
+<h2>Contact</h2>
+<p>Questions about this policy or about your data: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></p>
+<footer>Velora Suite - local-first browser tools. Contact: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></footer>
+</main>
+</body>
+</html>

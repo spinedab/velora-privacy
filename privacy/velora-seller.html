@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Privacy Policy - Velora Seller</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<div class="crumb"><a href="../index.html">Velora Suite</a> / Velora Seller</div>
+<h1>Privacy Policy - Velora Seller</h1>
+<p><strong>Last updated:</strong> September 2026</p>
+<h2>Overview</h2>
+<p>Velora Seller is a local-only Chrome extension that helps e-commerce sellers draft and organize product listings in the side panel: generate a title, bullets, description and keywords from the product facts you type, check them against per-marketplace limits, score their quality locally, and keep a catalog of saved listings. It is designed with a privacy-first architecture.</p>
+<h2>Data Collection</h2>
+<p>Velora Seller does <strong>not</strong> collect, transmit, or store any user data on external servers. There is no analytics, no tracking, and no telemetry transmitted outside of the browser.</p>
+<h2>How Data Is Handled</h2>
+<ul><li><strong>Local storage only.</strong> Product inputs, generated listings, the saved catalog, marketplace preference, and the optional API key are stored exclusively in <code>chrome.storage.local</code> on the user's device.</li><li><strong>No page access.</strong> The extension does not read, modify, or interact with any web page. It has no content scripts, no <code>activeTab</code>, and no <code>scripting</code> permission. Everything you work on is typed or pasted into the panel.</li><li><strong>Local quality checks.</strong> The listing score, per-marketplace limit validation, keyword coverage and risky-claim detection all run in JavaScript on your device, with no network request and no API key required.</li><li><strong>Clipboard on demand.</strong> The clipboard is written only when you click a Copy button. The clipboard is never read.</li><li><strong>User-controlled exports.</strong> The catalog is exported as a CSV file only when you click Export. Nothing is uploaded anywhere.</li><li><strong>No user accounts.</strong> The extension does not require or support user accounts, login, or registration of any kind.</li></ul>
+<h2>External API Usage</h2>
+<p>The only external network request made by this extension is to <strong>api.groq.com</strong>, and only when you explicitly click Generate listing, Variants, or Translate listing. This request:</p>
+<ul><li>Uses your own Groq API key, which you provide and store locally.</li><li>Sends only the product details you entered (name, category, features, materials, dimensions, audience, price, tone) and, for Translate, the listing text being translated.</li><li>Is initiated exclusively by manual user action; there are no background, scheduled, or automatic API calls.</li></ul>
+<p>The extension developer has no access to your API key, product data, or catalog. Usage of the Groq API is governed by Groq's own terms of service and privacy policy.</p>
+<h2>Permissions Explained</h2>
+<ul><li><strong>sidePanel</strong> - renders the listing workspace in Chrome's side panel.</li><li><strong>storage</strong> - saves your product inputs, listings, catalog, and the optional API key locally.</li><li><strong>clipboardWrite</strong> - copies a listing field or the Markdown version when you click Copy.</li><li><strong>downloads</strong> - saves the catalog CSV when you click Export.</li><li><strong>host permission for api.groq.com</strong> - allows the optional, user-initiated AI requests.</li></ul>
+<h2>Data Deletion</h2>
+<p>All data can be removed at any time by deleting listings from the catalog inside the panel, clicking &quot;Forget key&quot;, or uninstalling the extension. Uninstalling removes all locally stored data.</p>
+<h2>Changes to This Policy</h2>
+<p>Any future changes to this policy will be published with an updated extension version and a new &quot;Last updated&quot; date.</p>
+<h2>Velora Keys</h2>
+<p>If you also use Velora Keys and have approved this extension there, this extension can ask Velora Keys for your AI API key when it has none of its own saved. The request travels over Chrome's local messaging between your own installed extensions; nothing is sent to a server. The key is used for this extension's requests to the AI provider, exactly as if you had pasted it here, and this extension does not store it. You can revoke the approval in Velora Keys at any time.</p>
+<h2>Contact</h2>
+<p>Questions about this policy or about your data: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></p>
+<footer>Velora Suite - local-first browser tools. Contact: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></footer>
+</main>
+</body>
+</html>

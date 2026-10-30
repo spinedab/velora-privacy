@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Privacy Policy - Velora Tabs</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<div class="crumb"><a href="../index.html">Velora Suite</a> / Velora Tabs</div>
+<h1>Privacy Policy - Velora Tabs</h1>
+<p><strong>Last updated:</strong> September 2026</p>
+<h2>Overview</h2>
+<p>Velora Tabs is a local-only Chrome extension that organizes the tabs of the current window from the side panel: grouping by domain, finding duplicates, collapsing groups and saving sessions. It makes no network requests of any kind.</p>
+<h2>Data Collection</h2>
+<p>Velora Tabs does <strong>not</strong> collect, transmit, or store any user data on external servers. There is no analytics, no tracking, and no telemetry transmitted outside of the browser.</p>
+<h2>How Data Is Handled</h2>
+<ul><li><strong>Local storage only.</strong> Saved sessions (tab URLs, titles, group names and colors) are stored exclusively in <code>chrome.storage.local</code> on the user's device, and only when the user clicks &quot;Save session&quot;.</li><li><strong>Tab metadata in memory.</strong> While the panel is open, the extension reads the titles, URLs and group information of the tabs in the current window to display them. This information is not persisted unless you save a session, and it is never sent anywhere.</li><li><strong>Actions only on click.</strong> Grouping, ungrouping, collapsing, switching and closing tabs happen only in response to an explicit click in the panel. Closing duplicate tabs additionally requires a confirmation step.</li><li><strong>No user accounts.</strong> The extension does not require or support user accounts, login, or registration of any kind.</li></ul>
+<h2>External API Usage</h2>
+<p>Velora Tabs makes <strong>no network requests of any kind</strong>. It does not call any AI provider or any other service.</p>
+<h2>Page Access</h2>
+<p>Velora Tabs does not declare content scripts, has no host permissions and does not request the <code>scripting</code> permission. It cannot read or modify the content of any web page; it only works with tab metadata (title, URL, group) provided by Chrome's tabs API.</p>
+<h2>Permissions Explained</h2>
+<ul><li><strong>sidePanel</strong> - renders the tab organizer in Chrome's side panel.</li><li><strong>storage</strong> - saves your sessions locally.</li><li><strong>tabs</strong> - lists the tabs of the current window (title, URL, favicon) and lets you switch, group or, after confirmation, close them.</li><li><strong>tabGroups</strong> - creates, names, colors, collapses and expands tab groups.</li></ul>
+<h2>Data Deletion</h2>
+<p>Saved sessions can be deleted one by one inside the panel. Uninstalling the extension removes all locally stored data.</p>
+<h2>Changes to This Policy</h2>
+<p>Any future changes to this policy will be published with an updated extension version and a new &quot;Last updated&quot; date.</p>
+<h2>Contact</h2>
+<p>Questions about this policy or about your data: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></p>
+<footer>Velora Suite - local-first browser tools. Contact: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Privacy Policy - Velora Access</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+<div class="crumb"><a href="../index.html">Velora Suite</a> / Velora Access</div>
+<h1>Privacy Policy - Velora Access</h1>
+<p><strong>Last updated:</strong> September 2026</p>
+<h2>Overview</h2>
+<p>Velora Access is a local-only Chrome extension that applies readability and accessibility adjustments (typography, contrast, color inversion, cursor size, text scale, a reading ruler, read-aloud) to the page you are viewing, only when you click, and removes them on request. It makes no network requests of any kind.</p>
+<h2>Data Collection</h2>
+<p>Velora Access does <strong>not</strong> collect, transmit, or store any user data on external servers. There is no analytics, no tracking, and no telemetry transmitted outside of the browser.</p>
+<h2>How Data Is Handled</h2>
+<ul><li><strong>Local storage only.</strong> Your last-used settings and the settings you choose to save per website (keyed by hostname) are stored exclusively in <code>chrome.storage.local</code> on the user's device. The stylesheet currently applied to a tab is remembered in <code>chrome.storage.session</code> (cleared when the browser closes) so it can be removed again.</li><li><strong>Page changes on demand.</strong> The extension changes a page only when you click &quot;Apply to page&quot;: it inserts a stylesheet and, if enabled, one overlay element for the reading ruler. &quot;Reset page&quot; removes both. Reloading the tab also removes them.</li><li><strong>Read aloud.</strong> When you click &quot;Read selected text&quot;, the text you selected on the page is read by the browser's built-in speech synthesis inside the extension. It is not stored and not sent anywhere.</li><li><strong>No user accounts.</strong> The extension does not require or support user accounts, login, or registration of any kind.</li></ul>
+<h2>External API Usage</h2>
+<p>Velora Access makes <strong>no network requests of any kind</strong>. It does not call any AI provider or any other service.</p>
+<h2>Page Access</h2>
+<p>Velora Access does not declare content scripts and has no host permissions. Access to a page is granted per click through <code>activeTab</code>. The only code executed on the page inserts or removes a stylesheet, adds or removes the reading-ruler overlay, or reads the current text selection. It never clicks, types, submits forms or reads anything other than the selection.</p>
+<h2>Permissions Explained</h2>
+<ul><li><strong>sidePanel</strong> - renders the controls in Chrome's side panel.</li><li><strong>storage</strong> - saves your last-used and per-site settings locally.</li><li><strong>activeTab</strong> - grants temporary access to the current tab only after you click, so the adjustments can be applied to it.</li><li><strong>scripting</strong> - inserts and removes the stylesheet, toggles the reading ruler and reads the selected text in the active tab, on click.</li></ul>
+<h2>Data Deletion</h2>
+<p>Per-site settings can be removed with &quot;Forget site&quot; inside the panel. Uninstalling the extension removes all locally stored data.</p>
+<h2>Changes to This Policy</h2>
+<p>Any future changes to this policy will be published with an updated extension version and a new &quot;Last updated&quot; date.</p>
+<h2>Contact</h2>
+<p>Questions about this policy or about your data: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></p>
+<footer>Velora Suite - local-first browser tools. Contact: <a href="mailto:dnework.col@gmail.com">dnework.col@gmail.com</a></footer>
+</main>
+</body>
+</html>
